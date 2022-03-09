@@ -4,6 +4,7 @@ import { InscriptionComponent } from './composants/inscription/inscription.compo
 import { ContactListComponent } from './composants/contact-list/contact-list.component';
 import {ConnexionComponent} from './composants/connexion/connexion.component';
 import { AccueilComponent } from './composants/accueil/accueil.component';
+import { NotfoundComponent } from './composants/notfound/notfound.component';
 
 
 
@@ -32,13 +33,14 @@ const routes: Routes = [
     component: NotfoundComponent
   },
   {
-    path: '**',
-    component: NotfoundComponent
-  },
-  {
     path: 'contact-list',
     component : ContactListComponent
+  },
+  {
+    path: '**',
+    component: NotfoundComponent
   }
+
 ];
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
