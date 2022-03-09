@@ -28,6 +28,14 @@ const routes: Routes = [
     component: ConnexionComponent
   },
   {
+    path: 'notfound',
+    component: NotfoundComponent
+  },
+  {
+    path: '**',
+    component: NotfoundComponent
+  },
+  {
     path: 'contact-list',
     component : ContactListComponent
   }
@@ -36,5 +44,4 @@ const routes: Routes = [
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
-
-export class AppRoutingModule {}
+export class AppRoutingModule { }
