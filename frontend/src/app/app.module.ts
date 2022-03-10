@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
+import { FormsModule,ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ConnexionComponent } from './composants/connexion/connexion.component';
@@ -10,6 +10,7 @@ import { ContactListComponent } from './composants/contact-list/contact-list.com
 import { InscriptionComponent } from './composants/inscription/inscription.component';
 import { AccueilComponent } from './composants/accueil/accueil.component';
 import { NotfoundComponent } from './composants/notfound/notfound.component';
+
 
 @NgModule({
   declarations: [
@@ -23,7 +24,9 @@ import { NotfoundComponent } from './composants/notfound/notfound.component';
     NotfoundComponent
   ],
   imports: [
+    FormsModule,
     BrowserModule,
+    ReactiveFormsModule,
     AppRoutingModule
   ],
   providers: [],
