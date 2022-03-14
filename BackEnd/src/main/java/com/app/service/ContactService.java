@@ -1,7 +1,6 @@
 package com.app.service;
 
 import java.util.List;
-//
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -15,10 +14,20 @@ public class ContactService {
 	private ContactRepository contactRepo;
 	
 	public Contact saveContact(Contact contact) {
+
 		return contactRepo.save(contact);
 	}
+	public Contact updateContact(Contact contact, int id){
+		Contact ctcUpdate = contactRepo.findById(id).get();
+		ctcUpdate.setId(contact.getId());
+		ctcUpdate.setAdressePostal(contact.getAdressePostal());
+		ctcUpdate.setEmail(contact.getEmail());
+		ctcUpdate.setPrenom(contact.getPrenom());
 
-	public Contact updateContact(Contact contact) {
+		return contactRepo.save(ctcUpdate);
+	}
+
+	public Contact update(Contact contact) {
 		return contactRepo.save(contact);
 	}
 	

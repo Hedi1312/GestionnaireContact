@@ -1,16 +1,11 @@
-package com.app;
+package com.app.controller;
 
 import java.util.List;
+import java.util.UUID;
 
+import com.app.dao.ContactRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.DeleteMapping;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.PutMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import com.app.model.Contact;
 import com.app.service.ContactService;
@@ -21,15 +16,9 @@ public class ContactController {
 	
 	@Autowired
 	private ContactService contactServ;
-	
+	private ContactRepository contactRepository;
 	@PostMapping(value = "postcontact")
 	public List<Contact> saveContact(@RequestBody Contact contact){
-		contactServ.saveContact(contact);
-		return contactServ.findAllContact();
-	}
-	
-	@PutMapping(value = "updatecontact")
-	public List<Contact> updateContact(@RequestBody Contact contact){
 		contactServ.saveContact(contact);
 		return contactServ.findAllContact();
 	}

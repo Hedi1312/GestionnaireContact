@@ -14,19 +14,15 @@ export class DemoService {
     return this.http.post("http://localhost:8083/postcontact",contact,{responseType: 'text' as 'json'});
   }
 
-  public updateContact(contact : Contact){
-    return this.http.put("http://localhost:8083/updatecontact",contact,{responseType: 'text' as 'json'});
-  }
-
   public getContacts(){
     return this.http.get("http://localhost:8083/getallContacts");
   }
 
   public getContactById(a: number){
-    return this.http.get("http://localhost:8083/getcontactbyid?cid="+a);
+    return this.http.get("http://localhost:8083/getcontactbyid?id="+a);
   }
 
   public deleteContact(a: number){
-    return this.http.delete("http://localhost:8083/deletecontact?cid="+a);
+    return this.http.delete("http://localhost:8083/deletecontact?id="+a);
   }
 }

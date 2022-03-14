@@ -25,11 +25,6 @@ export class AjouterContactComponent implements OnInit {
     resp.subscribe((data)=>this.contacts=data);
   }
 
-  public updateContactNow(){
-    let resp = this.service.updateContact(this.contact);
-    resp.subscribe((data)=>this.contacts=data);
-  }
-
   public searchById(a:number){
     let resp = this.service.getContactById(a);
     resp.subscribe((data)=>this.contact=data);
