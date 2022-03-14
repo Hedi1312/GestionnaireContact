@@ -5,6 +5,7 @@ import { ContactListComponent } from './composants/contact-list/contact-list.com
 import {ConnexionComponent} from './composants/connexion/connexion.component';
 import { AccueilComponent } from './composants/accueil/accueil.component';
 import { NotfoundComponent } from './composants/notfound/notfound.component';
+import { AjouterContactComponent } from './composants/ajouter-contact/ajouter-contact.component';
 
 
 
@@ -12,6 +13,10 @@ const routes: Routes = [
   {
     path: 'inscription',
     component: InscriptionComponent
+  },
+ 
+  { path:"ajouter-contact",
+    component: AjouterContactComponent
   },
 
   {

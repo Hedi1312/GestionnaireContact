@@ -1,0 +1,76 @@
+
+  <div class="container-fluid">
+      <h1 style="text-align: center;font-size: 50px;color:black;">DEMO APPLICATION</h1><br>
+      <div style="padding:3% 3%;margin: auto;background-color:lightgoldenrodyellow;">
+      <div class="container-fluid">
+        <h1 style="text-align: center;">ContactS</h1><br>
+        <div class="row">
+        <div class="col-sm-4">
+          <div style="margin:auto;border:2px solid white;border-radius:5px;padding: 10px;">
+            <h3 style="text-align: center;">Add Contacts(All information required*)</h3>
+              <form action="#" post="method">
+                <div class="form-group">
+                  <label for="id">Contact Id:</label><br>
+                  <input type="number" class="form-control" [(ngModel)]="contact.id" placeholder="Enter Contact Id while updating Only" id="id" name="id">
+                </div><br>
+                <div class="form-group">
+                  <label >Contact nom:</label><br>
+                  <input type="text" class="form-control" [(ngModel)]="contact.nom" placeholder="Enter Contact prenom" id="contactnom" name="contactnom" required>
+                </div><br>
+                    <div class="form-group">
+                      <label >Contact prenom:</label><br>
+                      <input type="text" class="form-control" [(ngModel)]="contact.prenom" placeholder="Enter Contact prenom" id="contactprenom" name="contactprenom" required>
+                    </div><br>
+
+                  <input type="submit" class="btn btn-primary" style="width:45%;font-size:30px;background-color:blue;color:white;" value="Register" (click)="contactNow()">
+                  <input type="submit" class="btn btn-success" style="width:45%;font-size:30px;background-color:coral;color:white;" value="Update" (click)="updateContactNow()"><br>
+
+              </form>
+              </div>
+            </div><br><br><br><br><br>
+            <div class="col-sm-8">
+              <h3 style="text-align: center;">Search Contact By Cid</h3>
+              <br>
+              <div class="form-group">
+                  <label for="search">Search By Cid:</label><br>
+                  <input type="number" class="form-control" [(ngModel)]="search.a" placeholder="Search By Cid" id="search" name="search"><br>
+                  <button class="btn btn-info btn-xs" (click)="searchById(search.a)"><span class="glyphicon glyphicon-remove"></span> Search</button><br>
+                </div><br>
+                <table class="table table-dark table-responsive-sm">
+                  <tr>
+                      <th>id</th>
+                      <th>Contact nom</th>
+                      <th>Contact prenom</th>
+                      <th>Delete</th>
+                  </tr>
+                  <tr >
+                      <td>{{contact.id}}</td>
+                      <td>{{contact.nom}}</td>
+                      <td>{{contact.prenom}}</td>
+                      <td class="text-center"><button class="btn btn-danger btn-xs" (click)="delContact(contact.id)"><span class="glyphicon glyphicon-remove"></span> Delete</button></td>
+                  </tr>
+              </table>
+              <br>
+
+              <h3 style="text-align: center;">List of Contacts</h3>
+              <br>
+              <table class="table table-dark table-responsive-sm">
+                <thead>
+                <tr>
+                  <th>id</th>
+                  <th>nom</th>
+                  <th>prenom</th>
+                  <th>Delete</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr *ngFor="let contact of contacts">
+                  <td>{{contact.id}}</td>
+                  <td>{{contact.nom}}</td>
+                  <td>{{contact.prenom}}</td>
+                  <td class="text-center"><button class="btn btn-danger btn-xs" (click)="delContact(contact.cid)"><span class="glyphicon glyphicon-remove"></span> Delete</button></td>
+                </tr>
+                </tbody>
+            </table><br><br>
+
+            </div>
