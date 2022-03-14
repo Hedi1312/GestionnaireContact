@@ -1,0 +1,94 @@
+<div class="container-fluid">
+      <div style="padding:3% 3%;margin: auto;background-color:rgb(236, 236, 236);">
+      <div class="container-fluid">
+        <h1 style="text-align: center;">Gestionnaire de Contacts</h1><br>
+        <div class="row">
+        <div class="col-sm-4">
+          <div style="margin:auto;border:2px solid white;border-radius:5px;padding: 10px;">
+            <h3 style="text-align: center;">Ajouter Un Contact</h3>
+              <form action="#" post="method">
+                <div class="form-group">
+                </div><br>
+                <div class="form-group">
+                  <label >Nom :</label><br>
+                  <input type="text" class="form-control" [(ngModel)]="contact.nom" placeholder="Entrez le nom" id="contactnom" name="contactnom" required>
+                </div><br>
+                    <div class="form-group">
+                      <label >Prenom:</label><br>
+                      <input type="text" class="form-control" [(ngModel)]="contact.prenom" placeholder="Entrez le prenom" id="contactprenom" name="contactprenom" required>
+                    </div><br>
+                    <div class="form-group">
+                      <label >Adresse Postal:</label><br>
+                      <input type="text" class="form-control" [(ngModel)]="contact.adressePostal" placeholder="Entrez adressePostal" id="contactadressePostal" name="contactadressePostal" required>
+                    </div><br>
+                    <div class="form-group">
+                      <label >Numéro Télé:</label><br>
+                      <input type="text" class="form-control" [(ngModel)]="contact.numeroTele" placeholder="Entrez le numeroTele" id="contactnumeroTele" name="contactnumeroTele" required>
+                    </div><br>
+                    <div class="form-group">
+                      <label >Prenom:</label><br>
+                      <input type="text" class="form-control" [(ngModel)]="contact.email" placeholder="Entrez le email" id="contactemail" name="contactemail" required>
+                    </div><br>
+                  <input type="submit" class="btn btn-primary" style="width:30%;font-size:20px;background-color:blue;color:white;" value="Register" (click)="contactNow()">
+
+              </form>
+              </div>
+            </div><br><br><br><br><br>
+            <div class="col-sm-8">
+              <h3 style="text-align: center;">Rechercher Un Contact </h3>
+              <br>
+              <div class="form-group">
+                  <label for="search">Mettez le Id du Client :</label><br>
+                  <input type="number" class="form-control" [(ngModel)]="search.a" placeholder="Rechercher un contact" id="search" name="search"><br>
+                  <button class="btn btn-info btn-xs" (click)="searchById(search.a)"><span class="glyphicon glyphicon-remove"></span> Rechercher</button><br>
+                </div><br>
+                <table class="table table-secondary table-responsive-sm">
+                  <tr>
+                      <th>id</th>
+                      <th>Nom</th>
+                      <th>Prenom</th>
+                      <th>Adresse Postal</th>
+                      <th>Numéro de téléphone</th>
+                      <th>Email</th>
+                      <th>Supprimer</th>
+                  </tr>
+                  <tr >
+                      <td>{{contact.id}}</td>
+                      <td>{{contact.nom}}</td>
+                      <td>{{contact.prenom}}</td>
+                      <td>{{contact.adressePostal}}</td>
+                      <td>{{contact.numeroTele}}</td>
+                      <td>{{contact.email}}</td>
+                      <td class="text-center"><button class="btn btn-danger btn-xs" (click)="delContact(contact.id)"><span class="glyphicon glyphicon-remove"></span> Supprimer</button></td>
+                  </tr>
+              </table>
+              <br>
+
+              <h3 style="text-align: center;">Liste de contacts</h3>
+              <br>
+              <table class="table table-secondary table-responsive-sm">
+                <thead>
+                <tr>
+                  <th>id</th>
+                  <th>nom</th>
+                  <th>prenom</th>
+                  <th>Adresse Postal</th>
+                  <th>Numéro de téléphone</th>
+                  <th>Email</th>
+                  <th>Supprimer</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr *ngFor="let contact of contacts">
+                  <td>{{contact.id}}</td>
+                  <td>{{contact.nom}}</td>
+                  <td>{{contact.prenom}}</td>
+                  <td>{{contact.adressePostal}}</td>
+                  <td>{{contact.numeroTele}}</td>
+                  <td>{{contact.email}}</td>
+                  <td class="text-center"><button class="btn btn-danger btn-xs" (click)="delContact(contact.id)"><span class="glyphicon glyphicon-remove"></span> Supprimer</button></td>
+                </tr>
+                </tbody>
+            </table><br><br>
+
+            </div>

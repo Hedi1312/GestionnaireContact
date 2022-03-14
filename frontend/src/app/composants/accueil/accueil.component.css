@@ -1,0 +1,174 @@
+
+
+section:hover {
+
+    background-size:auto 110%;
+
+}
+
+section {
+
+    height:75vh;
+
+    text-align:center;
+
+    padding-top:3rem;
+
+    background-size:auto 100%;
+
+    background-repeat:no-repeat;
+
+    background-position:center;
+
+}
+
+section + section {
+
+    margin-top:0.5rem;
+
+}
+
+section > div, .container {
+
+    width:calc(100% - 2rem);
+    max-width:1200px;
+    margin:0 auto;
+
+}
+
+section > div > *:first-child {
+
+    margin-top:0;
+
+    margin-bottom:.5rem;
+
+    font-size:3rem;
+
+}
+
+
+#section2 img{
+    display: inline-block;
+    float: left;
+    margin-top:-8px;
+}
+#section2 p{
+    color:black;
+    font-family:'Open Sans',Arial,sans-serif;
+    font-weight: 300;
+    font-size: 25px;
+    line-height: 25px;
+
+}
+/* COLORS */
+
+.c-white {
+
+    color:white;
+
+}
+
+
+
+.bgc-black {
+
+    background-color:black;
+
+}
+
+.promo::after {
+
+    content:"Nouveau";
+    font-size:0.4em;
+    font-weight:bold;
+    text-transform:uppercase;
+    background-color:red;
+    padding:0.2em 0.7em;
+    border-radius:0.2em;
+    vertical-align:top;
+    margin-left:1em;
+    color:white;
+
+}
+
+.promo2::after {
+
+    content:"Commencer";
+    font-size:0.4em;
+    font-weight:bold;
+    text-transform:uppercase;
+    background-color:rgb(60, 0, 255);
+    padding:0.2em 0.7em;
+    border-radius:0.2em;
+    vertical-align:top;
+    margin-left:1em;
+    color:white;
+
+}
+.gallery{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    margin: 50px 0;
+}
+.contentChoix{
+    width: 24%;
+    margin: 15px;
+    box-sizing: border-box;
+    float: left;
+    text-align: center;
+    border-radius:10px;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    padding-top: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    transition: .4s;
+}
+.contentChoix:hover{
+    box-shadow: 0 0 11px rgba(33,33,33,.2);
+    transform: translate(0px, -8px);
+    transition: .6s;
+}
+#imageChoix{
+    width: 200px;
+    height: 200px;
+    text-align: center;
+    margin: 0 auto;
+    display: block;
+}
+#buttonStyleChoix{
+    text-align: center;
+    font-size: 24px;
+    color: #fff;
+    width: 100%;
+    padding: 15px;
+    border:0px;
+    outline: none;
+    cursor: pointer;
+    margin-top: 5px;
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+.depo-1{
+    background-color: #000000;
+}
+.depo-2{
+    background-color: rgba(0, 0, 0, 0.96);
+}
+.depo-3{
+    background-color: #7178f6;
+}
+@media(max-width: 1000px){
+    .contentChoix{
+        width: 46%;
+    }
+}
+@media(max-width: 750px){
+    .contentChoix{
+        width: 100%;
+    }
+}
+
+
